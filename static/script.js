@@ -35,7 +35,7 @@ if (!_token) {
 
 window.onSpotifyPlayerAPIReady = () => {
   const player = new Spotify.Player({
-    name: 'Web Playback SDK Template',
+    name: 'Discordify',
     getOAuthToken: cb => { cb(_token); }
   });
 
