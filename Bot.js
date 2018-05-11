@@ -12,10 +12,6 @@ app.get('/',function(req, res){
  	res.sendFile('index.html');
  });
 
-app.get('*', function(req,res){
- 	res.status(404).send("page doesn't exist!");
-
-});
 
 
 // Load up the discord.js library
