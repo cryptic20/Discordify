@@ -1,0 +1,27 @@
+{
+  "name": "discordify",
+  "version": "1.0.0",
+  "description": "discord music bot controlled by spotify device/app",
+  "main": "Bot.js",
+  "dependencies": {
+    "discord.js": "^11.3.2",
+    "eslint": "^4.19.1",
+    "express": "^4.16.3",
+    "opusscript": "0.0.6"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start" : "node Bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryptic20/Discordify.git"
+  },
+  "author": "sherwin wyco",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cryptic20/Discordify/issues"
+  },
+  "homepage": "https://github.com/cryptic20/Discordify#readme"
+}
