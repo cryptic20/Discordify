@@ -29,21 +29,20 @@ client.on('ready', () => {
 });
 
 const commands = {
-  'enable': (msg) => {
+  'join': (msg) => {
   		return new Promise((resolve, reject) => {
   			const voiceChannel = msg.member.voiceChannel;
   			if (!voiceChannel || voiceChannel.type !== 'voice') return msg.reply('I couldn\'t connect to your voice channel...');
   			voiceChannel.join().then(connection => resolve(connection)).catch(err => reject(err));
-
         //connect to spotify uri
-        console.log('Spotify enabled!');
+        console.log('Spotify joined!');
   		});
    },
-   'disable': (msg)=>{
+   'disconnect': (msg)=>{
      return new Promise((resolve, reject) => {
       const voiceChannel = msg.member.voiceChannel;
       voiceChannel.leave();
-       console.log('Spotify disabled!');
+       console.log('Spotify disconnected!');
     });
   },
   'ping': (msg)=>{
