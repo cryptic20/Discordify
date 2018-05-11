@@ -12,8 +12,6 @@ app.get('/',function(req, res){
  	res.sendFile('index.html');
  });
 
-
-
 // Load up the discord.js library
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -49,9 +47,10 @@ const commands = {
     });
   },
   'ping': (msg)=>{
+		console.log(`ping command used.`);
     let ping = Date.now();
     msg.channel.send('Ping').then((msg)=>{
-    msg.edit(`Pong! \nLatency is ${msg.createdTimestamp - ping}ms. API Latency is ${Math.round(client.ping)}ms`);
+    msg.edit(`Pong! \nLatency is ${Date.now() - ping}ms. API Latency is ${Math.round(client.ping)}ms`);
   });
  }
 };//end of const command bracket
