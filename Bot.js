@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
+//process.env.PORT for herokuapp
 app.listen(process.env.PORT || 3000, function(){
 	console.log('listening to port 3000');
 });
@@ -10,7 +11,7 @@ app.use(express.static('static'));
 
 app.get('/',function(req, res){
  	res.sendFile('index.html');
- });
+});
 
 // Load up the discord.js library
 const Discord = require('discord.js');
@@ -38,14 +39,14 @@ const commands = {
         console.log('Spotify joined!');
   		});
    },
-   'disconnect': (msg)=>{
+'disconnect': (msg)=>{
      return new Promise((resolve, reject) => {
       const voiceChannel = msg.member.voiceChannel;
       voiceChannel.leave();
        console.log('Spotify disconnected!');
     });
   },
-  'ping': (msg)=>{
+'ping': (msg)=>{
 		console.log(`ping command used.`);
     let ping = Date.now();
     msg.channel.send('Ping').then((msg)=>{
@@ -53,7 +54,6 @@ const commands = {
   });
  }
 };//end of const command bracket
-
 
 client.on('message', msg => {
   //ignore message not using prefix
